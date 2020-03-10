@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import api from "./api";
 import {  Link } from "react-router-dom";
 
+
 class Articles extends Component {
     constructor(props) {
         super(props);
@@ -28,14 +29,16 @@ class Articles extends Component {
 
         return !loaded ? <p>Loading...</p> : (
          <>
-        <h2>Articles</h2> 
+        <h1 class="display-1">Articles</h1> 
         <ul className="list-group">
             { articles.map(article => (
                 <li className="list-group-item" key={ article.id }>
                     <Link to={ `/articles/${ article.id }` }>{ article.title }</Link>
+                    
                 </li>
             )) }
         </ul>
+
          </>
         );
     }

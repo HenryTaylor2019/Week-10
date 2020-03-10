@@ -1,5 +1,6 @@
 import Articles from './Articles';
 import Article from './Article';
+import CreateArticle from './CreateArticle';
 import { BrowserRouter as Router, Route, Switch 
 } from "react-router-dom";import React from 'react';
 
@@ -14,10 +15,14 @@ const Stuff = () => (
 
         <Switch>
 
+            <Route path="/articles/create">
+                <CreateArticle />
+            </Route>
+
             <Route exact path="/articles" component={ Articles } />
             
             <Route path="/articles/:id" render={ ({ match }) => ( <Article id={ match.params.id } />) } />
-        
+
         </Switch>
 
       </React.Fragment>

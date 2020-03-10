@@ -29,9 +29,10 @@ class Comments extends Component{
             <ul className="list-group">
                 { comments.map(comment => (
                     <li className="list-group-item" key={ comment.id }>
-                        <h3>{ comment.email }</h3> 
-                      
-                        <p>{ comment.comment }</p>
+                        
+                        <p className="list-group-item-text">{ comment.comment }</p>
+
+                        <p className="list-group-item-text" class="text-muted">{ comment.email }</p> 
                     </li>
 
                 )) }

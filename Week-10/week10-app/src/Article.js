@@ -1,6 +1,9 @@
 import React, { Component } from "react";
 import api from "./api";
 import Comments from './Comments';
+import CreateComment from './CreateComment';
+
+import Tags from './Tags';
 
 
 class Article extends Component{
@@ -27,12 +30,13 @@ class Article extends Component{
 
         return !loaded ? <p>Loading...</p> : (
          <>
-        <h2>{article.title}</h2> 
+        <h1 class="display-1">{article.title}</h1> 
         <p>{article.article}</p> 
-        <p>{ article.tags } </p>
-        
+       
+        <Tags tags={ article.tags } />
         <Comments id={ this.props.id }/>
-
+        <CreateComment id={this.props.id}/>
+        
          </>
         );
     }
